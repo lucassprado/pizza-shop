@@ -34,7 +34,7 @@ export function StoreProfileDialog() {
   const queryClient = useQueryClient()
 
   const { data: managedRestaurant } = useQuery({
-    queryKey: ['get-managed-restaurant'],
+    queryKey: ['managed-restaurant'],
     queryFn: getManagedRestaurant,
     staleTime: Infinity,
   })
@@ -56,12 +56,12 @@ export function StoreProfileDialog() {
     description,
   }: StoreProfileSchema) {
     const cached = queryClient.getQueryData<GetManagedRestaurantResponse>([
-      'get-managed-restaurant',
+      'managed-restaurant',
     ])
 
     if (cached) {
       queryClient.setQueryData<GetManagedRestaurantResponse>(
-        ['get-managed-restaurant'],
+        ['managed-restaurant'],
         {
           ...cached,
           name,

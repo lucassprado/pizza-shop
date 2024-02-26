@@ -23,14 +23,14 @@ export function AccountMenu() {
   const navigate = useNavigate()
 
   const { data: profile, isLoading: isLoadingProfile } = useQuery({
-    queryKey: ['get-profile'],
+    queryKey: ['profile'],
     queryFn: getProfile,
     staleTime: Infinity,
   })
 
   const { data: managedRestaurant, isLoading: isLoadingManagedRestaurant } =
     useQuery({
-      queryKey: ['get-managed-restaurant'],
+      queryKey: ['managed-restaurant'],
       queryFn: getManagedRestaurant,
       staleTime: Infinity,
     })
